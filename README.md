@@ -33,7 +33,7 @@ To obtain low-level access to remote control events from a web page you can do t
 
 #### How it works under the hood
 
-We create a dummy &lt;audio&gt; element and generate a silent WAV file of any length on the client-side to playback using JavaScript. Producing this silent WAV is very inexpensive to do client-side in this way.
+We create a dummy &lt;audio&gt; element and generate a silent WAV file of any length on the client-side to playback using JavaScript. Producing a silent WAV to then use in this dummy element is then very inexpensive and fast to generate on the client-side in this library.
 
 Once that dummy media object obtains media focus (if it can do so on the current platform) then media key events dispatched toward that object (from any connected remote control hardware and software) will be propagated toward the page to be used to control any content in any way.
 
