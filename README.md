@@ -7,24 +7,27 @@ This library allows web developers to obtain low-level access to remote control 
 To obtain low-level access to remote control events from a web page you can do the following:
 
 1.   Create a new `RemoteControls` object with the required duration for remote control focus and a callback to be run when the object has been fully initialized:
-``` javascript
-var controls = new RemoteControls(300, readyCallback);
-```
+    ``` javascript
+    var controls = new RemoteControls(300, readyCallback);
+    ```
+
 2.   Start the `RemoteControls` object when you are ready to obtain remote controls focus:
-``` javascript
-function readyCallback() {
-  controls.start();
-}
-```
+    ``` javascript
+    function readyCallback() {
+      controls.start();
+    }
+    ```
+
 3.   Listen for remote control events and wire these up to your web content however you wish:
-``` javascript
-controls.onstarted = function() {};
-controls.onplaybuttonpressed = function() {};
-controls.onpausebuttonpressed = function() {};
-// etc ... for 'seekchange', 'volumechange', 'previousbuttonpressed'
-// and 'nextbuttonpressed' events
-controls.onended = function() {};
-```
+    ``` javascript
+    controls.onstarted = function() {};
+    controls.onplaybuttonpressed = function() {};
+    controls.onpausebuttonpressed = function() {};
+    // etc ... for 'seekchange', 'volumechange', 'previousbuttonpressed'
+    // and 'nextbuttonpressed' events
+    controls.onended = function() {};
+    ```
+
 4.  Use the remote control events to drive whatever web content you wish such as Web Audio API content, Flash-based media, presentations or slide shows.
 
 
