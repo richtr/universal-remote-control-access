@@ -1,6 +1,6 @@
 ## Using remote control events for arbitrary (non-media) purposes
 
-This library allows web developers to obtain low-level access to remote control events to control any kind of web content such as Flash-based media, presentations, slide shows or Web Audio API content.
+This library allows web developers to obtain low-level access to remote control events to control any kind of web content such as Flash-based media, presentations, slide shows or Web Audio API content _based on the assumption that platform-level media focus can be obtained via `HTMLMediaElement` objects_ (related: [https://github.com/whatwg/media-keys]).
 
 #### Usage
 
