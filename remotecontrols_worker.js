@@ -36,9 +36,9 @@ function encodeWAV(length) {
   writeString(view, 12, 'fmt ');
   /* format chunk length */
   view.setUint32(16, 16, true);
-  /* sample format (raw) */
+  /* sample format (pcm) */
   view.setUint16(20, 1, true);
-  /* channel count (1) */
+  /* channel count */
   view.setUint16(22, 1, true);
   /* sample rate */
   view.setUint32(24, sampleRate, true);
@@ -53,17 +53,9 @@ function encodeWAV(length) {
   /* data chunk length */
   view.setUint32(40, length * sampleRate, true);
 
-  var offset = 44;
-  var writeCount = sampleRate / 8;
-
-  for (var i = 0; i < length; i++) {
-    for (var j = 0; j < writeCount; j++) {
-      // Write in 64-bit blocks (despite bits per sample being 8-bits)
-      // This speeds up the blank wav stream writing process considerably
-      view.setFloat64(offset, 0x00, true);
-      offset += 8; // move write pointer forward 64 bits
-    }
-  }
+  // Write WAV data section starting at bit offset 44.
+  // Since we are generating a silent stream and thus all
+  // data is zeroed out we can skip this step.
 
   return view;
 }
