@@ -39,4 +39,4 @@ Once this dummy media object begins playback it automatically obtains media focu
 
 #### Compatibility
 
-At the time of writing **only iOS** supports any level of integration with hardware and software based remote control events from web content. Therefore, this code works best (and currently only on) iOS devices.
+At the time of writing **only iOS** supports any level of integration with hardware and software based remote control events from `HTMLMediaElement` objects. Therefore, this code will currently only work on iOS-based devices.
