@@ -8,14 +8,16 @@
     self.domElement.remotecontrols = true;
     self.domElement.title = document.title;
 
+    self.wavBlob = null;
+
     setupRemoteControlMethods(self);
     setupRemoteControlEventHandlers(self);
 
     var worker = new Worker('remotecontrols_worker.js');
 
     worker.onmessage = function(e) {
-      var wavBlob = e.data;
-      var wavUrl = URL.createObjectURL(wavBlob);
+      self.wavBlob = e.data;
+      var wavUrl = URL.createObjectURL(self.wavBlob);
 
       self.domElement.src = wavUrl;
 
