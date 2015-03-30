@@ -58,10 +58,12 @@
       log("Failed to load media file with error code " + controls.domElement.error.code);
     }
 
-    // DEBUG CODE: let's show the underlying remote controller element
+    // Show the underlying remote controller element
+    // (Dummy 1x1 HTMLMediaElement must be visible to retain media controls)
     window.addEventListener('load', function() {
-      // Dummy 1x1 HTMLMediaElement must be visible to retain media controls
       document.body.appendChild(controls.domElement);
+      // Optionally change the metadata to display in remote control interfaces
+      controls.domElement.title = "My App Remote";
     }, true);
   </script>
 </body>
