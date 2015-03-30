@@ -4,9 +4,12 @@
     var self = this;
 
     self.domElement = document.createElement("audio");
-    self.domElement.controls = true;
+    self.domElement.controls = false;
     self.domElement.remotecontrols = true;
     self.domElement.title = document.title;
+
+    self.domElement.style.width = "1px";
+    self.domElement.style.height = "1px";
 
     self.wavBlob = null;
 
